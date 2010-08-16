@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block head %}
+<!-- extjs -->
+<link rel="stylesheet" type="text/css" href="/media/js/lib/ext-3.2.0/resources/css/ext-all.css" />
+
+<script type="text/javascript" src="/media/js/lib/ext-3.2.0/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/media/js/lib/ext-3.2.0/ext-all.js"></script>
+<script type="text/javascript" src="/media/js/lib/ext-3.2.0/src/locale/ext-lang-pl.js"></script>
+
+<!-- logindialog -->
+<link rel="stylesheet" type="text/css" href="/media/js/lib/logindialog/css/flags.css" />
+<link rel="stylesheet" type="text/css" href="/media/js/lib/logindialog/css/virtualkeyboard.css" />
+
+<script type="text/javascript" src="/media/js/lib/logindialog/js/virtualkeyboard.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/plugins/virtualkeyboard.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/Ext.ux.Crypto.SHA1.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/Ext.ux.form.IconCombo.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/Ext.ux.form.LoginDialog.js"></script>
+
+<!-- tools -->
+<script type="text/javascript" src="/media/js/seiho.wizard.js"></script>
+<script type="text/javascript" src="/media/js/seiho.window.js"></script>
+
+<!-- application -->
+<link rel="stylesheet" type="text/css" href="/media/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/icons.css" />
+<link rel="shortcut icon" href="/media/images/icons/asterisk_orange.png"/>
+
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAA2MAUxAQe4n7aDilu4RFYFxQBGeEHu_5jnh4sWrbZw2ows5dAOhQ9Lidl-0qyzw5yKY2tzZCXx2X3Ww" type="text/javascript"></script>
+
+<script type="text/javascript" src="/media/js/GMapPanel.js"></script>
+<script type="text/javascript" src="/remoting/api.js"></script>
+
+<script type="text/javascript" src="/media/js/application.exercises.js"></script>
+<script type="text/javascript" src="/media/js/application.profile.js"></script>
+<script type="text/javascript" src="/media/js/application.js"></script>
+{% endblock %}
+
+{% block body %}
+<div id="header">
+	<h1><a href="/">Inteligent Home Manager</a></h1>
+	{% if user.is_authenticated %}
+	{% load gravatar_tags %}
+	<div id="user">
+		<div class="box">
+			<div class="user-name">
+				<a href="/">
+					{% if user.first_name %}
+						{{ user.first_name }} {{ user.last_name }}
+					{% else %}
+						{{ user }}
+					{% endif %}
+				</a>
+			</div>
+			<div class="user-profile"><a id="user-location" href="/">Ustawienia</a></div>
+			<div class="logout"><a href="{% url logout %}">wyloguj</a></div>
+		</div>
+		<a href="/">
+			<img src="{% gravatar_url user.email 45 %}" width="45" height="45" alt="[ {{ user }} ]" />
+		</a>
+	</div>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block head %}
+<!-- extjs -->
+<link rel="stylesheet" type="text/css" href="/media/js/lib/ext-3.2.0/resources/css/ext-all.css" />
+
+<script type="text/javascript" src="/media/js/lib/ext-3.2.0/adapter/ext/ext-base.js"></script>
+<script type="text/javascript" src="/media/js/lib/ext-3.2.0/ext-all.js"></script>
+
+<!-- logindialog -->
+<link rel="stylesheet" type="text/css" href="/media/js/lib/logindialog/css/flags.css" />
+<link rel="stylesheet" type="text/css" href="/media/js/lib/logindialog/css/virtualkeyboard.css" />
+
+<script type="text/javascript" src="/media/js/lib/logindialog/js/virtualkeyboard.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/plugins/virtualkeyboard.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/Ext.ux.Crypto.SHA1.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/Ext.ux.form.IconCombo.js"></script>
+<script type="text/javascript" src="/media/js/lib/logindialog/js/Ext.ux.form.LoginDialog.js"></script>
+
+<!-- application -->
+<link rel="stylesheet" type="text/css" href="/media/css/base.css" />
+<link rel="stylesheet" type="text/css" href="/media/css/icons.css" />
+<link rel="shortcut icon" href="/media/images/icons/asterisk_orange.png"/>
+
+<script type="text/javascript" src="/media/js/login.js"></script>
+{% endblock %}
+
+{% block title %}Logowanie do systemu{% endblock %}
+
+{% block body %}
+<div id="header">
+	<h1><a href="/">Inteligent Home Manager</a></h1>
+	<div id="search"></div>
+</div>
+{% endblock %}
